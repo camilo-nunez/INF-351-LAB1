@@ -136,8 +136,5 @@ int main(int argc, char*argv[]) {
     cudaFree(BdInput);
     cudaFree(BdOutput);
 
-    printf("\n");
-    printf("\n");
-
     return 0;
 }
