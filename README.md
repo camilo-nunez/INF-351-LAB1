@@ -1,23 +1,21 @@
 # INF-351-LAB1
 
 
-# Incluye
+## Incluye
 ---
 * Todos los archivos primarios (.cu)
 * Este README
 * Makefile
 * Entradas{1,2}/imagenes{1,2,3,4,5,6}.txt
 
-
-# Dependencias
+## Dependencias
 ---
 * iostream
 * time.h
 * cuda_runtime.h
 * stdio.h
 
-
-# Ejecucion
+## Ejecucion
 ---
 Para compilar, se debe utilizar el comando de make:
 $ make
@@ -31,8 +29,7 @@ $ time ./output < Entradas{1,2}/imagenes{1,2,3,4,5,6}.txt
 Se recomienda eliminar cualquier dependecia antes y despues de la ejecucion:
 $ make clean
 
-
-# Datos de Entorno
+## Datos de Entorno
 ---
 SO: Ubuntu 16.04.6 LTS 
 Kernel : 4.4.0-1079-aws
@@ -43,7 +40,7 @@ Cuda compilation tools, release 9.0, V9.0.176
 GNU Make 4.1
 
 
-# Detalles de instancia AWS
+## Detalles de la instancia de AWS
 ---
 Number of CUDA devices 1.
 There is 1 device supporting CUDA
@@ -60,12 +57,11 @@ Maximum grid dimensions:    2147483647 x 65535 x 65535
 Clock Rate:                 797000
 Number of muliprocessors:   8
 
-
-# Datos Programadores
+## Datos Programadores
 ---
-Nombre:	Nicolas Rosas Gomez
-ROL: 201573608-1
-Correo:	nicolas.rosasg@sansano.usm.cl
+Nombre:	Monserrat Figueroa Lagos
+ROL: 201573525-5
+Correo:	monserrat.figueroa@sansano.usm.cl
 
 Nombre:	Camilo Nunez Fernandez
 ROL: 	201573573-5
