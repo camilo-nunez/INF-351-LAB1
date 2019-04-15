@@ -53,6 +53,33 @@ void Read(float** R, float** G, float** B,
     *R = R1; *G = G1; *B = B1;
 }
 
+void Read_scanf(float** R, float** G, float** B, 
+          int *M, int *N, int *L) {    
+
+    scanf("%d %d %d\n", L, M, N); // read firts three importand values
+ 
+    int arrsize =(*M)*(*N)*(*L);
+    int imsize=(*M)*(*N);
+
+    float* R1 = new float[arrsize];
+    float* G1 = new float[arrsize];
+    float* B1 = new float[arrsize];
+    
+    for(int j=0; j < *L; j++){ // iteration for the L images COLOR
+        for(int i=0; i < imsize; ++i){ // iteration for the line with m*n float values // COLOR R
+            scanf("%f ", &(R1[i+imsize*j]));
+        }
+        for(int i=0; i < imsize; ++i){ // iteration for the line with m*n float values // COLOR R
+            scanf("%f ", &(G1[i+imsize*j]));
+        }
+        for(int i=0; i < imsize; ++i){ // iteration for the line with m*n float values // COLOR R
+            scanf("%f ", &(B1[i+imsize*j]));                         
+        }
+    }
+    
+    *R = R1; *G = G1; *B = B1;
+}
+
 __global__ void kernelGPU(float *R,float* G,float* B,float* Rin,float*Gin,float*Bin,int M,int N,int L){
 
     int tId= threadIdx.x+blockIdx.x*blockDim.x;
@@ -110,8 +137,8 @@ int main(int argc, char **argv){
     float *R, *G, *B; //Resultado
     float *Rin, *Gin, *Bin; //Entrada
 
-    Read(&Rhost, &Ghost, &Bhost, &M, &N, &L, "images6.txt");
-    
+    //Read(&Rhost, &Ghost, &Bhost, &M, &N, &L, "images6.txt");
+    Read_scanf(&Rhost, &Ghost, &Bhost, &M, &N, &L);
 
 
     /*
