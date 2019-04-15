@@ -184,8 +184,6 @@ int main(int argc, char **argv){
     cudaEventSynchronize(ct2);
     cudaEventElapsedTime(&dt, ct1, ct2);
     std::cout << "Tiempo GPU: " << dt << "[ms]" << std::endl;
-
-    
     
     Rhostout = new float[M*N];
     Ghostout = new float[M*N];
@@ -194,8 +192,6 @@ int main(int argc, char **argv){
     cudaMemcpy(Ghostout, G, M * N * sizeof(float), cudaMemcpyDeviceToHost);
     cudaMemcpy(Bhostout, B, M * N * sizeof(float), cudaMemcpyDeviceToHost);
     Write(Rhostout, Ghostout, Bhostout, M, N, "imgGPU.txt");
-
-    
     
     cudaFree(R); cudaFree(G); cudaFree(B);
     cudaFree(Rin); cudaFree(Gin); cudaFree(Bin);
